@@ -1,8 +1,7 @@
 # Intro to PRs
 
-![Illustrative image of people working together, by RosZie](..%2Fdocs%2FPeople-working-together-by-RosZie.png)
-*https://pixabay.com/illustrations/teamwork-team-together-community-7423950/*
-
+![Illustrative image of people working together, by RosZie](./images/colab.png)
+*https://pixabay.com/illustrations/teamwork-team-together-community-7423950*
 
 You can use the following guide to learn how and why to create a pull request.
 
@@ -23,9 +22,20 @@ Copy the following file to a new Git repo.
 ```bash
 cd ~/source/repos
 git init my-first-pr
+```
+![Initialise new repository in folder with same name](./images/1-init-repo.png)
+
+```bash
 cd my-first-pr
+```
+
+![Change into the folder](./images/2-cd-folder.png)
+
+```bash
 cp ~/Downloads/README.md .
 ```
+
+![Copy the Downloaded ReadMe file](./images/3-copy-readme.png)
 
 **IMPORTANT:** Please ensure you continue working on the file copy and not the original.
 
@@ -46,11 +56,15 @@ cp ~/Downloads/README.md .
 git remote add origin <URL>
 ```
 
+![Add Remote for Repo](./images/4-add-remote.png)
+
 2. Check that the remote repository was added.
 
 ```bash
 git remote -v
 ```
+
+![Verify Remote](./images/5-verify-remote.png)
 
 3. Consider why it does not provide a URL for pull, only `push` and `fetch`?
 
@@ -61,6 +75,18 @@ git remote -v
    ```bash
    git push -u origin main
    ```
+![Attempt to push to remote](./images/6-push-with-error.png)
+
+> I forgot to add the file to staging and then commit it...
+
+![](./images/7-add-readme-staging.png)
+![](./images/8-commit-readme.png)
+![](./images/9-push-set-upstream.png)
+
+> Also forgot to add the colab image to local and push to the remote repository...
+
+![](./images/9a-add-image-commit-push.png)
+
 
 5. Refresh the GitHub page for your repository. You should see this `README.md` file.
 
@@ -85,12 +111,19 @@ git checkout -b fix/pr-definition
 git switch -c fix/pr-definition
 ```
 
+![](./images/10-create-branch.png)
+
 2. Edit this file and address the two TODO items in two separate commits.
 
 ```bash
 git commit -am "Add forks to the PR definition"
 git commit -am "Give correct reason to why PRs are named that"
 ```
+
+![](./images/11-add-forks-to-pr.png)
+
+![](./images/12-correct-reason.png)
+
 
 3. Check on GitHub whether the branch exists there or not. Does it? Why or why not?
 4. You may think it is because you haven't pushed to the branch yet, so go ahead and try to push the branch to the remote repository.
@@ -100,6 +133,8 @@ git push
 # or in full
 git push origin fix/pr-definition
 ```
+
+![](./images/13-push-no-errors.png)
 
 You probably got a similar error to this:
 
